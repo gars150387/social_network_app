@@ -2,12 +2,16 @@ import React from "react";
 // import rigoImage from "../../img/rigo-baby.jpg";
 // import "../../styles/home.scss";
 import { Container, Row, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 	return (
 		<Container>
 			<Row>
-				<Form md={6} style={{ width: "50%", margin: "auto" }} className="m-4">
+				<Form
+					md={6}
+					style={{ width: "60%", height: "50%", margin: "auto", border: "solid black 1px", margin: "auto" }}
+					className="m-4">
 					<Form.Group className="mb-3" controlId="formBasicEmail">
 						<Form.Label>Email address</Form.Label>
 						<Form.Control type="email" placeholder="Enter email" />
@@ -21,9 +25,14 @@ export const Home = () => {
 					<Form.Group className="mb-3" controlId="formBasicCheckbox">
 						<Form.Check type="checkbox" label="Check me out" />
 					</Form.Group>
-					<Button variant="primary" type="submit">
+					<Button variant="primary" type="submit" className="mb-3">
 						Submit
 					</Button>
+					<Link to="/signUp">
+						<Form.Text className="text-start" style={{ marginLeft: "10px" }}>
+							If you do not have an account. please click this link to create one
+						</Form.Text>
+					</Link>
 				</Form>
 			</Row>
 		</Container>
