@@ -37,6 +37,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			signUp: () => {
+				firebase
+					.auth()
+					.createUserWithEmailAndPassword(email, password)
+					.then(userCredential => {
+						// Signed in
+						var user = userCredential.user;
+						// ...
+					})
+					.catch(error => {
+						var errorCode = error.code;
+						var errorMessage = error.message;
+						// ..
+					});
 			}
 		}
 	};

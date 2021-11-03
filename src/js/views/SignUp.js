@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Col, Row, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const SignUp = () => {
+	const { store, actions } = useState();
 	return (
 		<Container
 			style={{
-				width: "400px",
-				height: "400px",
+				width: "50%",
+				height: "40%",
 				border: "solid black 1px",
 				marginTop: "20px",
 				borderRadius: "rounded"
@@ -36,13 +37,16 @@ export const SignUp = () => {
 				<Col xs className="w-100 h-15">
 					<input
 						className="m-auto mt-3 mb-3  w-100 h-15 rounded"
-						type="confirmationPassword"
+						type="password"
 						placeholder="Confirmation Password"
 					/>
 				</Col>
 			</Row>
 			<div className="text-end">
-				<Button variant="success" type="submit">
+				<Button
+					variant="success"
+					type="submit"
+					onClick={() => actions.SignUp(fisrtName, lastName, email, password)}>
 					Submit
 				</Button>
 			</div>
