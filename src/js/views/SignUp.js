@@ -4,30 +4,34 @@ import { Link } from "react-router-dom";
 
 export const SignUp = () => {
 	return (
-		<Container>
+		<Container style={{ width: "400px", height: "600px", border: "solid black 1px", marginTop: "20px" }}>
 			<Row md={10}>
-				<Col>
-					<input className="m-auto" type="text" placeholder="First Name" />
+				<Col className="w-100 h-15">
+					<input className="m-auto mt-3 mb-3  w-100 h-15" type="text" placeholder="First Name" />
 				</Col>
 			</Row>
 			<Row>
-				<Col>
-					<input className="m-auto" type="text" placeholder="Last Name" />
+				<Col xs className="w-100 h-15">
+					<input className="m-auto mt-3 mb-3  w-100 h-15" type="text" placeholder="Last Name" />
 				</Col>
 			</Row>
 			<Row>
-				<Col>
-					<input className="m-auto" type="email" placeholder="Email" />
+				<Col xs className="w-100 h-15">
+					<input className="m-auto mt-3 mb-3  w-100 h-15" type="email" placeholder="Email" />
 				</Col>
 			</Row>
 			<Row>
-				<Col>
-					<input className="m-auto" type="password" placeholder="Password" />
+				<Col xs className="w-100 h-15">
+					<input className="m-auto mt-3 mb-3  w-100 h-15" type="password" placeholder="Password" />
 				</Col>
 			</Row>
 			<Row>
-				<Col>
-					<input className="m-auto" type="confirmationPassword" placeholder="Confirmation Password" />
+				<Col xs className="w-100 h-15">
+					<input
+						className="m-auto mt-3 mb-3  w-100 h-15"
+						type="confirmationPassword"
+						placeholder="Confirmation Password"
+					/>
 				</Col>
 			</Row>
 			<Link to="/">
