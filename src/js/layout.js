@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Home } from "./views/home";
 import injectContext from "./store/appContext";
 import { SignUp } from "./views/SignUp";
+import { Feed } from "./views/Feed";
 
 //create your first component
 const Layout = () => {
@@ -19,6 +20,9 @@ const Layout = () => {
 					</Route>{" "}
 					<Route exact path="/signUp">
 						<SignUp />
+					</Route>
+					<Route exact path="/feedPage">
+						<Feed />
 					</Route>
 					<Route>
 						<h1>Not found!</h1>
