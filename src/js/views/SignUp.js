@@ -30,12 +30,18 @@ export const SignUp = () => {
 			</Row>
 			<Row>
 				<Col xs className="w-100 h-15">
-					<input className="m-auto mt-3 mb-3  w-100 h-15 rounded" type="password" placeholder="Password" />
+					<input
+						id="password"
+						className="m-auto mt-3 mb-3  w-100 h-15 rounded"
+						type="password"
+						placeholder="Password"
+					/>
 				</Col>
 			</Row>
 			<Row>
 				<Col xs className="w-100 h-15">
 					<input
+						id="passwordConfirmation"
 						className="m-auto mt-3 mb-3  w-100 h-15 rounded"
 						type="password"
 						placeholder="Confirmation Password"
@@ -46,7 +52,16 @@ export const SignUp = () => {
 				<Button
 					variant="success"
 					type="submit"
-					onClick={() => actions.SignUp(fisrtName, lastName, email, password)}>
+					onClick={(e) => {
+						if (password !== passwordConfirmation) {
+							e.preventDefault();
+							alert("Passwords do not match");
+						} else {
+							actions.SignUp(firstName, lastName, email, password)
+							e.preventDefault();
+						}
+					}
+					}>
 					Submit
 				</Button>
 			</div>
