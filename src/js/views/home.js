@@ -1,15 +1,31 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.scss";
+// import rigoImage from "../../img/rigo-baby.jpg";
+// import "../../styles/home.scss";
+import { Container, Row, Form, Button } from "react-bootstrap";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	return (
+		<Container>
+			<Row>
+				<Form md={6} style={{ width: "50%", margin: "auto" }} className="m-4">
+					<Form.Group className="mb-3" controlId="formBasicEmail">
+						<Form.Label>Email address</Form.Label>
+						<Form.Control type="email" placeholder="Enter email" />
+						<Form.Text className="text-muted">Well never share your email with anyone else.</Form.Text>
+					</Form.Group>
+
+					<Form.Group className="mb-3" controlId="formBasicPassword">
+						<Form.Label>Password</Form.Label>
+						<Form.Control type="password" placeholder="Password" />
+					</Form.Group>
+					<Form.Group className="mb-3" controlId="formBasicCheckbox">
+						<Form.Check type="checkbox" label="Check me out" />
+					</Form.Group>
+					<Button variant="primary" type="submit">
+						Submit
+					</Button>
+				</Form>
+			</Row>
+		</Container>
+	);
+};
